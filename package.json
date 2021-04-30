@@ -1,0 +1,29 @@
+{
+  "name": "tcpforwarder-throttled",
+  "version": "0.0.0",
+  "description": "A simple TCP Forwarder with throttle support.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "tcpforwarder": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yonle/tcpforwarder-throttled.git"
+  },
+  "keywords": [
+    "tcp",
+    "forwarder"
+  ],
+  "author": "Yonle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yonle/tcpforwarder-throttled/issues"
+  },
+  "homepage": "https://github.com/Yonle/tcpforwarder-throttled#readme",
+  "dependencies": {
+    "throttle": "^1.0.3"
+  }
+}
