@@ -25,9 +25,9 @@ server.on('connection', socket => {
 	client.on('error', socket.destroy);
 	socket.on('error', socket.destroy);
 	client.connect(forwardFrom.port, forwardFrom.hostname);
-	var throttledClient = client.pipe(throttle(bps));
-	var throttledSocket = socket.pipe(throttle(bps));
-	socket.pipe(throttle(bps)).pipe(client).pipe(throttle(bps)).pipe(socket);
+	var throttledClient = client.pipe(throttle({ bps: Number(bps) }));
+	var throttledSocket = socket.pipe(throttle({ bps: Number(bps) }));
+	socket.pipe(throttle({ bps: Number(bps) })).pipe(client).pipe(throttle({ bps: Number(bps) })).pipe(socket);
 	//throttledSocket.pipe(throttledClient).pipe(throttledSocket);
 	if (!verbose) return;
 	//throttledSocket.on('data', data => console.log("├── Client:", data.toString('utf8')));
